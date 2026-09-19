@@ -61,8 +61,8 @@ def extract_functions(path: Path) -> tuple[list[Function], list[str]]:
             remaining.pop()
 
         body_lines = [line]
+        brace_count = line.count("{") - line.count("}")
         i += 1
-        brace_count = 1
 
         while i < len(lines) and brace_count > 0:
             body_lines.append(lines[i])
